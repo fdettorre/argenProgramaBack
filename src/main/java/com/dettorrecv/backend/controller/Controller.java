@@ -31,6 +31,11 @@ public class Controller {
     private IEmpleadorService empleadorServ;
     
 
+    /**
+ *
+ * Empleador
+ */
+   
     @CrossOrigin(origins = "http://localhost:4200") 
     @PostMapping ("/new/empleador")
         public void agregarEmpleador (@RequestBody Empleador emp){
@@ -55,7 +60,12 @@ public class Controller {
             empleadorServ.borrarEmpleador(id);
         }
 
-        
+    
+         /**
+ *
+ * Estudios
+ */
+          
     @Autowired    
     private IEstudiosService estuServ;
     
@@ -87,7 +97,11 @@ public class Controller {
 
 
 
-
+ /**
+ *
+ * Habilidad
+ */
+   
 
     @Autowired    
     private IHabilidadService habServ;
@@ -115,5 +129,13 @@ public class Controller {
         public void borrarHabilidad (@PathVariable Long id) {
             habServ.borrarHabilidad(id);
         }
+
+   /**
+ *
+ * Autenticación
+ */    
+
+
+
 
 }
