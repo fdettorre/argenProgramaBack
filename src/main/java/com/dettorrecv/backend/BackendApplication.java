@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 public class BackendApplication {
@@ -28,12 +30,24 @@ public FilterRegistrationBean simpleCorsFilter() {
     CorsConfiguration config = new CorsConfiguration();  
     config.setAllowCredentials(true); 
     // *** URL below needs to match the Vue client URL and port ***
-    config.setAllowedOrigins(Collections.singletonList("https://fdetcv.herokuapp.com")); 
+    //*config.setAllowedOrigins(Collections.singletonList("https://fdetcv.herokuapp.com")); ***
+    config.setAllowedOrigins(Collections.singletonList("https://fdetcv.herokuapp.com/"));
     config.setAllowedMethods(Collections.singletonList("*"));  
     config.setAllowedHeaders(Collections.singletonList("*"));  
     source.registerCorsConfiguration("/**", config);  
     FilterRegistrationBean bean = new FilterRegistrationBean<>(new CorsFilter(source));
     bean.setOrder(Ordered.HIGHEST_PRECEDENCE);  
     return bean;  
-}           
+}   
+
+
+public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**").allowedOrigins("https://fdetcv.herokuapp.com/");
+            }
+        };
+    }
 }
