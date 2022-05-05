@@ -21,7 +21,7 @@ public class BackendApplication {
 		SpringApplication.run(BackendApplication.class, args);
 	}
 
-@CrossOrigin(origins = "https://fdetcv.herokuapp.com") 
+@CrossOrigin(origins = "https://fdetcv.web.app") 
 @Bean
 
         
@@ -31,7 +31,7 @@ public FilterRegistrationBean simpleCorsFilter() {
     config.setAllowCredentials(true); 
     // *** URL below needs to match the Vue client URL and port ***
     //*config.setAllowedOrigins(Collections.singletonList("https://fdetcv.herokuapp.com")); ***
-    config.setAllowedOrigins(Collections.singletonList("https://fdetcv.herokuapp.com/"));
+    config.setAllowedOrigins(Collections.singletonList("https://fdetcv.web.app/"));
     config.setAllowedMethods(Collections.singletonList("*"));  
     config.setAllowedHeaders(Collections.singletonList("*"));  
     source.registerCorsConfiguration("/**", config);  
@@ -46,7 +46,7 @@ public WebMvcConfigurer corsConfigurer() {
 
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("https://fdetcv.herokuapp.com/");
+                registry.addMapping("/**").allowedOrigins("https://fdetcv.web.app/");
             }
         };
     }
