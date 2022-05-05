@@ -19,7 +19,7 @@ public class BackendApplication {
 		SpringApplication.run(BackendApplication.class, args);
 	}
 
-@CrossOrigin(origins = "http://localhost:4200") 
+@CrossOrigin(origins = "https://fdetcv.herokuapp.com") 
 @Bean
 
         
