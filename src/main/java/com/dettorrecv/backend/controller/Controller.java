@@ -36,19 +36,19 @@ public class Controller {
  * Empleador
  */
    
-    @CrossOrigin(origins = "http://localhost:4200") 
+    @CrossOrigin(origins = "https://fdetcv.herokuapp.com") 
     @PostMapping ("/new/empleador")
         public void agregarEmpleador (@RequestBody Empleador emp){
         empleadorServ.crearEmpleador(emp);
         }
     
-    @CrossOrigin(origins = "http://localhost:4200") 
+    @CrossOrigin(origins = "https://fdetcv.herokuapp.com") 
     @PutMapping ("/edit/empleador")
         public void editarEmpleador (@RequestBody Empleador emp){
         empleadorServ.editarEmpleador(emp);
         }        
         
-    @CrossOrigin(origins = "http://localhost:4200") 
+    @CrossOrigin(origins = "https://fdetcv.herokuapp.com") 
     @GetMapping ("/ver/empleador")
     @ResponseBody
         public List<Empleador> verEmpleador() {
@@ -70,20 +70,20 @@ public class Controller {
     private IEstudiosService estuServ;
     
         
-    @CrossOrigin(origins = "http://localhost:4200") 
+    @CrossOrigin(origins = "https://fdetcv.herokuapp.com") 
     @PostMapping ("/new/estudios")
         public void agregarEstudios (@RequestBody Estudios est){
         estuServ.crearEstudios(est);
         }
     
-    @CrossOrigin(origins = "http://localhost:4200") 
+    @CrossOrigin(origins = "https://fdetcv.herokuapp.com") 
     @PutMapping ("/edit/estudios")
         public void editarEstudios (@RequestBody Estudios est){
         estuServ.editarEstudios(est);
         }        
         
            
-    @CrossOrigin(origins = "http://localhost:4200") 
+    @CrossOrigin(origins = "https://fdetcv.herokuapp.com") 
     @GetMapping ("/ver/estudios")
     @ResponseBody
         public List<Estudios> verEstudios   () {
@@ -106,19 +106,19 @@ public class Controller {
     @Autowired    
     private IHabilidadService habServ;
 
-    @CrossOrigin(origins = "http://localhost:4200") 
+    @CrossOrigin(origins = "https://fdetcv.herokuapp.com") 
     @PostMapping ("/new/habilidad")
         public void agregarHabilidad (@RequestBody Habilidad hab){
         habServ.crearHabilidad(hab);
         }
     
-    @CrossOrigin(origins = "http://localhost:4200") 
+    @CrossOrigin(origins = "https://fdetcv.herokuapp.com") 
     @PutMapping ("/edit/habilidad")
         public void editarHabilidad (@RequestBody Habilidad hab){
         habServ.crearHabilidad(hab);
         }    
         
-    @CrossOrigin(origins = "http://localhost:4200") 
+    @CrossOrigin(origins = "https://fdetcv.herokuapp.com") 
     @GetMapping ("/ver/habilidad")
     @ResponseBody
         public List<Habilidad> verHabilidad   () {
